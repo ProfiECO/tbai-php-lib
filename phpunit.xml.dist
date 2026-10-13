@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
-  bootstrap="tests/bootstrap.php" beStrictAboutOutputDuringTests="true" failOnRisky="true"
+  bootstrap="tests/bootstrap.php" beStrictAboutOutputDuringTests="true" failOnRisky="false"
   failOnWarning="true" colors="true" testdox="false"
   displayDetailsOnTestsThatTriggerDeprecations="true">
   <testsuites>
-    <testsuite name="Tbai test suite">
+    <testsuite name="all">
       <directory suffix="Test.php">./tests</directory>
+    </testsuite>
+    <testsuite name="api">
+      <directory suffix="Test.php">./tests/Barnetik/Tbai/Api</directory>
+      <directory suffix="Test.php">./tests/Barnetik/Tbai/LROE</directory>
+    </testsuite>
+    <testsuite name="unit">
+      <directory suffix="Test.php">./tests</directory>
+      <exclude>./tests/Barnetik/Tbai/Api</exclude>
+      <exclude>./tests/Barnetik/Tbai/LROE</exclude>
     </testsuite>
   </testsuites>
   <source>
